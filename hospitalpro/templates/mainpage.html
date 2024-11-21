@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include 'cdnlines.html' %}
+    <meta charset="utf-8">
+    <title>Hospital</title>
+  </head>
+  <style media="screen">
+form{
+  margin:5px;
+  padding:5px;
+  border:2px black solid;
+  box-shadow:2px 2px 2px blue,-2px -2px 2px blue;
+}
+body{
+      background-image: url("{% static 'images/heart.jpg' %}");
+      background-size: cover;
+  }
+  </style>
+  <body>
+    <h1 class="text-center text-white"style="font-size:100px; margin-top:50px;">Welcome To Apollo Hospital!!!</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class=" offset-2 col-md-4">
+          <h5 class="text-center text-white">Patient's Login!!!</h5>
+          <form method="POST" action="{% url 'patients_login' %}">
+            {% csrf_token %}
+            <label class="text-white">User Name: </label>
+            <input type="text" name="username" class="form-control">
+            <label class="text-white">Password:</label>
+            <input type="password" name="password" class="form-control">
+            <div class="text-center mt-2">
+              <input type="submit" value="Login" class="btn btn-success">
+              <input type="reset" value="Cancel" class="btn btn-danger">
+            </div>
+          </form>
+          {% if error %}
+          <p style="color: red;">{{ error }}</p>
+          {% endif %}
+        </div>
+
+          <div class="col-md-4">
+            <h5 class="text-center text-white">Doctor's Login!!!</h5>
+            <form method="POST" action="{% url 'doctors_login' %}">
+              {% csrf_token %}
+              <label class="text-white">User Name: </label>
+              <input type="text" name="username" class="form-control">
+              <label class="text-white">Password:</label>
+              <input type="password" name="password" class="form-control">
+              <div class="text-center mt-2">
+                <input type="submit" value="Login" class="btn btn-success">
+                <input type="reset" value="Cancel" class="btn btn-danger">
+              </div>
+            </form>
+            {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block nth %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include 'cdnlines.html' %}
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+  body{
+    background-image: url("{% static 'images/pic1.jpeg' %}");
+    background-size: cover;
+  }
+  </style>
+  <body>
+    {% include 'navbar.html' %}
+    <h1 class="text-center">Welcome To Appointment's Page!!!</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="offset-md-4 col-md-4">
+          <form  method="post">
+            {% csrf_token %}
+            <label>Patients Name:</label>
+            <input type="text" name="pname" class="form-control">
+            <label>Age:</label>
+            <input type="number" name="age" class="form-control">
+            <label>Gender:</label>
+            <input type="gender" name="gender" class="form-control">
+            <label>Mobile:</label>
+            <input type="number" name="mobile" class="form-control">
+            <label>Blood Group:</label>
+            <input type="text" name="bloodgroup"class="form-control">
+            <label>Doctors Name:</label>
+            <input type="text" name="doctorsname" class="form-control">
+            <label>Location:</label>
+            <input type="text" name="location" class="form-control">
+            <label>Problem:</label>
+            <textarea name="problem" rows="6" cols="60"class="mt-2"></textarea>
+            <div class="text-center mt-2">
+              <input type="submit"  value="Submit" class="btn btn-success">
+              <input type="reset" value="Cancel" class="btn btn-danger">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}

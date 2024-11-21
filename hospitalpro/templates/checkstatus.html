@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block nth %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html' %}
+    <title>Appointment Management</title>
+    <style media="screen">
+        form {
+            box-shadow: 10px 15px 40px rgba(128, 128, 128, 0.4);
+            margin: 10px;
+            padding: 10px;
+        }
+        body {
+            background-image: url("{% static 'images/bg3.webp' %}");
+            background-size: cover;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showForm(date, time, day) {
+            document.getElementById("appointment-date").value = date;
+            document.getElementById("appointment-time").value = time;
+            document.getElementById("appointment-day").value = day;
+            document.getElementById("booking-form").classList.remove("hidden");
+        }
+        function rejectAppointment() {
+           document.getElementById("rejection-message").classList.remove("hidden");
+           document.getElementById("booking-form").classList.add("hidden");
+       }
+    </script>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container-fluid text-dark">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="text-center mb-5">Check Appointment Dates Here!!!</h2>
+                <div class="mt-4">
+                    <h3>Accepted Appointments</h3>
+                    {% if data %}
+                        <ul class="list-unstyled">
+                            {% for appointment in data %}
+                                <li>
+                                    {{ appointment.date }} at {{ appointment.time }} on {{ appointment.day }}
+
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No appointments booked yet.</p>
+                    {% endif %}
+                </div>
+                <!-- Message displayed when an appointment is rejected -->
+                <p id="rejection-message" class="rejection-message">Your appointment was rejected.</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

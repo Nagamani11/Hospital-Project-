@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block nth %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html' %}
+    <title></title>
+  </head>
+  <style media="screen">
+  body{
+    background-image: url("{% static 'images/11.jpg' %}");
+    background-size: cover;
+  }
+  </style>
+  <body>
+    {% include 'navbar.html' %}
+<h2 class="text-center text-dark mb-5"> Welcome To Doctors Details!!!</h2>
+  <div class="container-fluid text-dark text-center">
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="text-center">Dr Sudheer Moodadla</h3>
+        <img src="{% static 'images/Dr.Sudheer-Moodadla.jpg' %}" height="60%" width="80%" alt="img">
+      </div>
+      <div class="col-md-4">
+        <h5>MBBS (1971), MD (1979), Dip. Card. (1976), FCCP</h5>
+        <h5>Registration No:4228</h5>
+        <h5>Language:Engish, हिंदी</h5>
+        <h5>40 years experience overall</h5>
+        <h5>Canal Circular Road , Kolkata</h5>
+      </div>
+      <div class="col-md-4">
+      <h3> MON, FRI</h3>
+      <h3>(11:00 AM-12:00 PM)</h3>
+      <a href="{% url 'take_appointment' %}" class="btn btn-info">Book Appointment</a>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-dark text-center">
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="text-center">Dr Sharmila pendyala</h3>
+        <img src="{% static 'images/Dr.Sharmila-pendyala.jpg' %}" height="60%" width="80%" alt="img">
+      </div>
+      <div class="col-md-4">
+        <h5>MD- Gen.Medicine, DM - Neurology</h5>
+        <h5>Registration No:80374</h5>
+        <h5>Language:Engish,Telugu</h5>
+        <h5>21 years experience overall</h5>
+        <h5>Seepat Road , Bilaspur</h5>
+      </div>
+      <div class="col-md-4">
+      <h3> MON, FRI</h3>
+      <h3>(11:30 AM-05:30 PM)</h3>
+      <a href="{% url 'take_appointment' %}" class="btn btn-info">Book Appointment</a>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-dark text-center">
+    <div class="row">
+      <div class="col-md-4">
+        <h4 class="text-center">Dr Samantha SathyaKumar</h4>
+        <img src="{% static 'images/Dr.Samantha-SathyaKumar.jpg' %}" height="60%" width="80%" alt="img">
+      </div>
+      <div class="col-md-4">
+        <h5>MBBS, MD Dermatology, Venereology & Leprology</h5>
+        <h5>Registration No:2160061</h5>
+        <h5>Language:Engish,Telugu</h5>
+        <h5>3 years experience overall</h5>
+        <h5>Arilova , Visakhapatnam</h5>
+      </div>
+      <div class="col-md-4">
+      <h3> MON, FRI</h3>
+      <h3>(11:30 AM-2:00 PM)</h3>
+      <a href="{% url 'take_appointment' %}" class="btn btn-info">Book Appointment</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid text-dark text-center">
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="text-center">Dr Ravi Teja Cheela</h3>
+        <img src="{% static 'images/Dr.Ravi-Teja-Cheela.jpg' %}" height="60%" width="80%" alt="img">
+      </div>
+      <div class="col-md-4">
+        <h5>Dentist,BDS, MDS (Gold Medalist)</h5>
+        <h5>Registration No:2160061</h5>
+        <h5>Language:Engish,Telugu</h5>
+        <h5>33 years experience overall</h5>
+        <h5>AKBC 31, Sector B, LDA Colony,Lucknow, Uttar Pradesh- 226012</h5>
+      </div>
+      <div class="col-md-4">
+      <h3> MON, FRI</h3>
+      <h3>(11:30 AM-1:30 PM)</h3>
+      <a href="{% url 'take_appointment' %}" class="btn btn-info">Book Appointment</a>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-dark text-center">
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="text-center">Dr Manoj Kumar </h3>
+        <img src="{% static 'images/Dr.Manoj-Kumar-Agarwala.jpg' %}" height="40%" width="80%" alt="img">
+      </div>
+      <div class="col-md-4">
+        <h5>Opthalmologist,</h5>
+        <h5>M.S. (Ophthalmology), MBBS</h5>
+        <h5>Language:Engish,Telugu</h5>
+        <h5>30 years experience overall</h5>
+        <h5>Apollo Health City, Road No 72, Jubilee Hills, Hyderabad</h5>
+      </div>
+      <div class="col-md-4">
+      <h3> MON, FRI</h3>
+      <h3>(10:30 AM-1:00 PM)</h3>
+      <a href="{% url 'take_appointment' %}" class="btn btn-info">Book Appointment</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock %}

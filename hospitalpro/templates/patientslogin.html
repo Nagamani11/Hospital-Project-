@@ -1,0 +1,27 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include 'cdnlines.html' %}
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+  body{
+    background-image: url("{% static 'images/9.jpg' %}");
+    background-size: cover;
+  }
+  </style>
+  <body>
+    {% include 'navbar.html' %}
+    <h1 class="text-center  text-dark" >Welcome To Patient's Page!!!</h1>
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-8 col-md-4">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

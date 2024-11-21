@@ -1,0 +1,22 @@
+
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html' %}
+    <title></title>
+</head>
+<style media="screen">
+body{
+  background-image: url("{% static 'images/bg.jpg' %}");
+  background-size: cover;
+
+}
+</style>
+<body>
+    {% include 'navbar.html' %}
+    <h1 class="text-center display-2-bold">Welcome To patient's login-History!!! </h1>
+    <p>Hello, {{ username }}!</p>
+    <p>You logged in on: {{ login_date }}</p>
+</body>
+</html>
